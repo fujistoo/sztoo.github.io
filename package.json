@@ -1,5 +1,6 @@
 {
-  "name": "stoo",
+  "name": "sztoo.github.io",
+  "description": "Personal website",
   "version": "1.0.0",
   "private": true,
   "scripts": {

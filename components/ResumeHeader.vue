@@ -14,9 +14,7 @@
     </div>
     <br/>
     <div class="resume__header_links_container">
-      <a v-for="l in bio.links" :key="l.title" :href="l.link" class="resume__header_links">
-        {{ l.text }} 
-      </a>
+      <a v-for="l in bio.links" :key="l.title" :href="l.link" class="resume__header_links">{{ l.text }}</a>
     </div>
   </div>
 </template>
@@ -90,7 +88,7 @@ export default {
 }
 
 .resume__header_links {
-  text-decoration: underline;
+  border-bottom: solid .5px #000;
   margin-right: 2vw;
 }
 </style>

@@ -20,7 +20,7 @@ export default {
       notShown: ['resume','test'],
       socialMedia: [
         {
-          link: "https://github.com/ssztoo",
+          link: "https://github.com/sztoo",
           iconKind: "icon-github-square",
           iconClass: "github",
           title: "github"

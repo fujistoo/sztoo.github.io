@@ -79,16 +79,16 @@ export default {
 
 .resume__header_contacts_container, .resume__header_links_container * {
   text-decoration: none;
-  color: black;
+  color: inherit;
   font-size: 1em;
 }
 
-.resume__header_contacts a:hover {
-  color: #7400f8;
+.resume__header_links_container a:hover {
+  color: #00c58e;
 }
 
 .resume__header_links {
-  border-bottom: solid .5px #000;
+  border-bottom: solid .5px white;
   margin-right: 2vw;
 }
 </style>

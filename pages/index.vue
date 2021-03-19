@@ -1,111 +1,101 @@
 <template>
   <div class="index__container">
-    <div>
-      <p class="name">
-        {{ name }}
-      </p>
-      <Contact v-if="display"/>
-      <ContactButton v-else/>
+    <div class="header__banner">
+      <div class="header__item">
+        <span class="header__name">{{ firstName}} {{ lastName }}</span>
+      </div>
+      <a class="header__links" v-for="(c, idx) in contacts" :key="idx" :href="c.link" target="_blank">{{ c.title }}</a>
     </div>
+      <div class="header__navs_container">
+        <NuxtLink class="header__navs" v-for="(n, idx) in navs" :key="idx" :to="n.destination">{{ n.title }}</NuxtLink>
+      </div>
   </div>
 </template>
 
 <script>
 export default {
   data () {
-    return {
-      name: "Sebastian Too",
-      display: true, 
+    return {  
+      firstName: 'Sebastian',
+      lastName: 'Too',
+      contacts: [
+        {
+          title: 'Email',
+          link: 'mailto:stoo@hawk.iit.edu'
+        },
+        {
+          title: 'Linkedin',
+          link: 'http://linkedin.com/in/sztoo'
+        },
+        {
+          title: 'Github',
+          link: 'http://github.com/sztoo'
+        }
+      ],
+      navs: [
+        {
+          title: 'work',
+          destination: '/work'
+        },
+        {
+          title: 'resume',
+          destination: '/resume'
+        }
+      ]
     }
   },
-  methods: {
-    handleWidthChange () {
-      const width = window.outerWidth; 
-      
-      this.display = (width <= 425) ? false : true; 
+  computed: {
+    splitCode () {
+      return this.code.split('');
     },
-  },
-  beforeMount () {
-    window.addEventListener('load', this.handleWidthChange);
-    window.addEventListener('resize', this.handleWidthChange);
-    window.addEventListener('orientationchange', this.handleWidthChange);
-  },
-  beforeDestroy () {
-    window.removeEventListener('load', this.handleWidthChange);
-    window.removeEventListener('resize', this.handleWidthChange);
-    window.removeEventListener('orientationchange', this.handleWidthChange);
+    splitFirstName () {
+      return this.firstName.split('');
+    },
+    splitLastName () {
+      return this.lastName.split('');
+    }
   }
 }
 </script>
 
 <style>
-.index__container {
-  margin: 0 auto;
-  min-height: 80vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.index__container * {
+  color: white;
+}
+
+.index__container a:hover{
+  color: #00cc92;
+  border-bottom: solid .5px #00cc92;
+}
+
+.header__banner {
+  margin-top: 25vh;
+}
+
+.header__name {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header__links {
+  text-decoration: none;
+  font-size: .75em;
+  line-height: 2em;
+  margin-right: 1.5vw;
+}
+
+.header__navs_container {
   text-align: center;
+  margin: auto;
+  margin-top: 25vh;
 }
 
-.name {
-  display: block;
-  font-weight: 300;
-  font-size: 5em;
-  color: #35495e;
-  letter-spacing: 10px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.buttons {
-  padding-top: 30px;
-}
-
-.button--green {
-  margin: 0;
-  font-size: 2vh;
-  padding: 8px 30px;
-  opacity: 0.8;
-  transition: 0.3s;
-}
-
-.button--green:hover {
-  opacity: 1
-}
-
-@media only screen and (max-width: 768px) {
-  .index__container {
-    min-height: 75vmin;
-  }
-  
-  .name {
-    font-size: 4em;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .index__container {
-    min-height: 100vmin;
-  }
-}
-@media only screen and (max-width: 426px) {
-  .index__container {
-    min-height: 70vmin;
-  }
-  .name {
-    font-size: 3.5em;
-    letter-spacing: 5px;
-
-  }
-  .button--resume {
-    display: none; 
-  }
+.header__navs {
+  text-decoration: none;
+  /* float: right; */
+  text-transform: uppercase;
+  font-size: .8em;
+  margin-left: 2vw;
+  border-bottom: .5px solid;
 }
 </style>

@@ -1,25 +1,15 @@
 <template>
   <div>
     <NavBar />
-    <PageTitle/>
-    <Nuxt />
-    <!-- <ScrollToTopButton /> -->
-    <icon-definitions></icon-definitions>
+    <Nuxt keep-alive :keep-alive-props="{ max: 5 }"/>
     <PageFooter/>
   </div>
 </template>
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  background-color: black;
+  font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -28,9 +18,10 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   margin-top: 3vh;
-  margin-left: 5vw; 
-  margin-right: 5vw;
+  margin-left: 10vw; 
+  margin-right: 10vw;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 *,

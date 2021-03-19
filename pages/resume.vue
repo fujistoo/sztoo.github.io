@@ -1,14 +1,15 @@
 <template>
   <div class="resume">
+    <!-- <PageTitle/> -->
     <div class="resume__container" id="resume__container">
       <div class="resume__info">
         <div class="resume__lastUpdate">
           Last updated: March 12, 2021
         </div>
         <div class="resume__download">
-          <span>Download: </span>
-          <a href="/pdfs/SebastianTooResume.pdf" target="_blank">Resume</a>
-          <a href="/pdfs/SebastianTooCurriculumVitae.pdf" target="_blank">Curriculum Vitae</a>
+          <span>download: </span>
+          <a href="/pdfs/SebastianTooResume.pdf" target="_blank">resume</a>
+          <a href="/pdfs/SebastianTooCurriculumVitae.pdf" target="_blank">curriculum vitae</a>
         </div>
       </div>
       <ResumeHeader/>
@@ -25,6 +26,14 @@
 </template>
 
 <style scoped>
+.resume__container {
+  background-color: #201e1e;
+}
+
+.resume__container * {
+  color: white;
+}
+
 .resume__info {
   margin-top: 5vh;
   padding-bottom: 5vh;
@@ -41,14 +50,18 @@
 }
 
 .resume__download a {
-  color: black;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: solid .5px white;
+}
+
+.resume__download a:hover {
+  color: #00c58e;
 }
 
 .resume__container {
   width: 90%;
   margin: auto;
-  border: 1px solid black;
+  border: 1.5px solid white;
   margin-top: 10vh;
   padding-left: 2vw;
   padding-right: 2vw;

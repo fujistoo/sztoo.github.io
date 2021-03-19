@@ -74,6 +74,7 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1vh;
+  color: #00c58e;
 }
 
 .resume__content {

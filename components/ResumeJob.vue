@@ -101,7 +101,8 @@ export default {
 }
 
 .resume__experience_job {
-  color: #744ce4;
+  color: #c37aff;
+  /* color: #744ce4; */
 }
 
 .resume__experience_background {

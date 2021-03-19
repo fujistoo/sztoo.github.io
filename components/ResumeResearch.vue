@@ -87,6 +87,6 @@ export default {
 
 .resume__research_works a {
   text-decoration: underline;
-  color: #9536e3;
+  color: #d4a1fd;
 }
 </style>
